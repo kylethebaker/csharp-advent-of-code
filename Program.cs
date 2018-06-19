@@ -11,7 +11,9 @@ namespace AdventOfCode
                 {"2015.1", AdventOfCode.TwentyFifteen.Day1.Run},
                 {"2015.2", AdventOfCode.TwentyFifteen.Day2.Run},
                 {"2015.3", AdventOfCode.TwentyFifteen.Day3.Run},
-                {"2015.4", AdventOfCode.TwentyFifteen.Day4.Run}
+                {"2015.4", AdventOfCode.TwentyFifteen.Day4.Run},
+                {"2015.5", AdventOfCode.TwentyFifteen.Day5.Run},
+                {"2015.6", AdventOfCode.TwentyFifteen.Day6.Run}
             };
 
         static void Main(string[] args)
