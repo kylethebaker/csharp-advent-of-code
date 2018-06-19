@@ -10,7 +10,8 @@ namespace AdventOfCode
             new Dictionary<string, Action> {
                 {"2015.1", AdventOfCode.TwentyFifteen.Day1.Run},
                 {"2015.2", AdventOfCode.TwentyFifteen.Day2.Run},
-                {"2015.3", AdventOfCode.TwentyFifteen.Day3.Run}
+                {"2015.3", AdventOfCode.TwentyFifteen.Day3.Run},
+                {"2015.4", AdventOfCode.TwentyFifteen.Day4.Run}
             };
 
         static void Main(string[] args)
