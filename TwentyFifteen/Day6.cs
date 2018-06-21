@@ -143,7 +143,30 @@ namespace AdventOfCode.TwentyFifteen
         //     by 2000000.
         private static int Part2(IEnumerable<(Switch, (int x, int y), (int x, int y))> input)
         {
-            return 42;
+            var finalGrid = input.Aggregate(createEmptyGrid(), (grid, instruction) => {
+                var (switchDirection, startPoint, stopPoint) = instruction;
+                for (var x = startPoint.x; x <= stopPoint.x; x++)
+                {
+                    for (var y = startPoint.y; y <= stopPoint.y; y++)
+                    {
+                        switch (switchDirection)
+                        {
+                            case Switch.On:
+                                grid[(x, y)]++;
+                                break;
+                            case Switch.Off:
+                                grid[(x, y)] = (grid[(x, y)] == 0) ? 0 : grid[(x, y)] - 1;
+                                break;
+                            case Switch.Toggle:
+                                grid[(x, y)] = grid[(x, y)] + 2;
+                                break;
+                        }
+                    }
+                }
+                return grid;
+            });
+
+            return finalGrid.Select(kv => kv.Value).Sum();
         }
     }
 }
